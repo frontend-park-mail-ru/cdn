@@ -1,4 +1,5 @@
 install: true
+language: generic
 sudo: required
 deploy:
   provider: s3
