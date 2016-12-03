@@ -1,3 +1,4 @@
+install: true
 sudo: required
 deploy:
   provider: s3
