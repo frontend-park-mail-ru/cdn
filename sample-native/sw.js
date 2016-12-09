@@ -2,7 +2,24 @@
 
 var CACHE_NAME = 'v1',
 	cacheUrls = [
-		'index.html',
+		'https://code.jquery.com/jquery-3.1.1.min.js',
+		'https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css',
+		'https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.js',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/sw.js',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/index.html',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/favicon.ico',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/manifest.json',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-16-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-24-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-32-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-48-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-57-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-64-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-72-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-114-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-120-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-144-192401.png',
+		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-152-192401.png',
 	];
 
 self.addEventListener('install', function (event) {
@@ -19,28 +36,15 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('fetch', function (event) {
-	event.respondWith((function () {
-		return caches
+	event.respondWith(
+		caches
 			.match(event.request)
 			.then(function (cachedResponse) {
 				if (cachedResponse) {
 					return cachedResponse;
 				}
 
-				return fetch(event.request)
-					.then(function (response) {
-						if (!response || response.status !== 200) {
-							return cachedResponse;
-						}
-						var clonedResponse = response.clone();
-						caches.open(CACHE_NAME).then(function (cache) {
-							cache.put(event.request, response.clone());
-						});
-						return clonedResponse;
-					})
-					.catch(function () {
-						return cachedResponse;
-					});
+				return fetch(event.request);
 			})
-	})());
+	);
 });
