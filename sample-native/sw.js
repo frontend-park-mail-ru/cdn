@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE_NAME = 'v2',
+var CACHE_NAME = 'v3',
 	cacheUrls = [
 		'https://code.jquery.com/jquery-3.1.1.min.js',
 		'https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css',

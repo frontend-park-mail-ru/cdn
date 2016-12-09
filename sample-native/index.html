@@ -18,7 +18,7 @@
 
 	<link rel=manifest href="https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/manifest.json">
 	<link rel=icon sizes=152x152 href="https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-152-192401.png">
-	<link rel=apple-touch-icon href="https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-152-192401.png'">
+	<link rel=apple-touch-icon href="https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-152-192401.png">
 	<style>
 		#loader {
 			height: 100%;
@@ -129,6 +129,8 @@
 				case 'div':
 					window.res.innerText = `Результат операции: ${a / b}`;
 					break;
+				default:
+					return;
 			}
 			$('.small.modal')
 					.modal('show')
