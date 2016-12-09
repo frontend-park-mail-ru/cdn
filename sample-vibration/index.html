@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vibration Test</title>
+</head>
+<body>
+
+<button id="vibr">TEST</button>
+
+<script>
+	window.vibr.addEventListener('click', function () {
+		if ('vibrate' in navigator) {
+			navigator.vibrate([100,30,100,30,100,30,1000,30,1000,30,100,30,100,30,100]);
+		}
+	});
+
+
+</script>
+
+
+</body>
+</html>
