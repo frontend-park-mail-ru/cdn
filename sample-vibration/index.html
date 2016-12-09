@@ -3,10 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Vibration Test</title>
+	<meta http-equiv=X-UA-Compatible content="IE=edge">
+	<meta name="viewport"
+	      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<style>
+		#vibr {
+			position: fixed;
+			height: 70px;
+			width: 400px;
+			font-size: 20px;
+			top: calc(50vh - 35px);
+			left: calc(50vw - 200px);
+		}
+	</style>
 </head>
 <body>
 
+<div>
 <button id="vibr">TEST</button>
+</div>
 
 <script>
 	window.vibr.addEventListener('click', function () {
