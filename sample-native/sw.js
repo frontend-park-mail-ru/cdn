@@ -20,6 +20,9 @@ var CACHE_NAME = 'v1',
 		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-120-192401.png',
 		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-144-192401.png',
 		'https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/imgs/calculator-icon-152-192401.png',
+		'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin',
+		'https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff',
+		'https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff',
 	];
 
 self.addEventListener('install', function (event) {
