@@ -58,7 +58,7 @@
 			"sizes": "152x152"
 		}
 	],
-	"start_url": "/",
+	"start_url": "https://s3.eu-central-1.amazonaws.com/technopark-cdn/sample-native/index.html",
 	"display": "fullscreen",
 	"orientation": "landscape",
 	"background_color": "#0F0848",
